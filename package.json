@@ -1,0 +1,105 @@
+{
+  "name": "advisor-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "preview": "cross-env NODE_ENV=production vue-cli-service serve --port=9112",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "start": "vue-cli-service serve --port=9112"
+  },
+  "dependencies": {
+    "dayjs": "1.8.8",
+    "element-ui": "2.6.0",
+    "isomorphic-fetch": "2.2.1",
+    "lodash": "4.17.11",
+    "string-similarity": "^3.0.0",
+    "vue": "2.6.8",
+    "vue-router": "3.0.2",
+    "vuex": "3.1.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "7.2.0",
+    "@vue/cli-plugin-babel": "3.4.1",
+    "@vue/cli-plugin-eslint": "3.4.1",
+    "@vue/cli-service": "3.4.1",
+    "@vue/eslint-config-airbnb": "4.0.0",
+    "babel-plugin-component": "1.1.1",
+    "less": "3.9.0",
+    "less-loader": "4.1.0",
+    "lint-staged": "8.1.5",
+    "vue-cli-plugin-element": "1.0.1",
+    "vue-template-compiler": "2.6.8",
+    "cross-env": "5.2.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/airbnb"
+    ],
+    "rules": {
+      "implicit-arrow-linebreak": 0,
+      "operator-linebreak": 0,
+      "import/no-unresolved": 0,
+      "no-underscore-dangle": 0,
+      "linebreak-style": 0,
+      "no-param-reassign": 0,
+      "no-shadow": 0,
+      "arrow-parens": 0,
+      "no-unused-expressions": 0,
+      "no-plusplus": 0,
+      "import/extensions": 0,
+      "consistent-return": 0,
+      "array-callback-return": 0,
+      "prefer-destructuring": 1,
+      "camelcase": 1,
+      "max-len": 0,
+      "object-curly-newline": 0,
+      "no-mixed-operators": 0,
+      "vue/attributes-order": "error",
+      "vue/html-quotes": "error",
+      "vue/order-in-components": "error",
+      "vue/no-v-html": "error",
+      "vue/prop-name-casing": "error",
+      "vue/this-in-template": "error",
+      "vue/attribute-hyphenation": "error",
+      "vue/html-end-tags": "error",
+      "vue/html-self-closing": "error",
+      "vue/mustache-interpolation-spacing": 0,
+      "vue/name-property-casing": "error",
+      "vue/no-multi-spaces": "error",
+      "vue/v-bind-style": "error",
+      "vue/v-on-style": "error"
+    },
+    "env": {
+      "node": true
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "beautify.language": {
+    "js": [],
+    "css": [],
+    "html": []
+  },
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_attributes": "force" // force-expand-multiline 可以换成上面任意一种value
+    }
+  }
+}

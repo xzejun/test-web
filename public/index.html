@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link href="<%= VUE_APP_CDN %>/favicon.ico" rel="shortcut icon" />
+    <script>
+      /*<%= new Date() %>*/
+      window.config = {
+        api: '<%= VUE_APP_API%>',
+        cdn: '<%= VUE_APP_CDN%>',
+      };
+    </script>
+    <title><%= VUE_APP_TITLE%></title>
+    <% if (process.env.NODE_ENV==='production') { %>
+    <script src="<%= VUE_APP_CDN %>/main/global.min.js"></script>
+    <link rel="preload" as="script" href="<%= VUE_APP_CDN %>/js/vue/2.6.8/vue.runtime.min.js" />
+    <link rel="preload" as="script" href="<%= VUE_APP_CDN %>/js/vue-router/3.0.2/vue-router.min.js" />
+    <link rel="preload" as="script" href="<%= VUE_APP_CDN %>/js/vuex/3.1.0/vuex.min.js" />
+    <link rel="preload" as="script" href="<%= VUE_APP_CDN %>/js/lodash/4.17.11/lodash.min.js" />
+    <% } %>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <% if (process.env.NODE_ENV!=='production') { %>
+    <script src="<%= VUE_APP_CDN %>/js/vue/2.6.8/vue.runtime.js"></script>
+    <script src="<%= VUE_APP_CDN %>/js/lodash/4.17.11/lodash.js"></script>
+    <script src="<%= VUE_APP_CDN %>/js/vue-router/3.0.2/vue-router.js"></script>
+    <script src="<%= VUE_APP_CDN %>/js/vuex/3.1.0/vuex.js"></script>
+    <% } else { %>
+    <script src="<%= VUE_APP_CDN %>/js/vue/2.6.8/vue.runtime.min.js"></script>
+    <script src="<%= VUE_APP_CDN %>/js/lodash/4.17.11/lodash.min.js"></script>
+    <script src="<%= VUE_APP_CDN %>/js/vue-router/3.0.2/vue-router.min.js"></script>
+    <script src="<%= VUE_APP_CDN %>/js/vuex/3.1.0/vuex.min.js"></script>
+    <div style="display:none"><script src="//s96.cnzz.com/z_stat.php?id=1276711363&web_id=1276711363"></script></div>
+    <% } %>
+  </body>
+</html>
